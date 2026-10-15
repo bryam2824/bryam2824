@@ -3,6 +3,8 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=180&section=header&text=¡Hola,%20soy%20Bryam%20M!&fontSize=40&fontColor=ffffff&animation=fadeIn" />
 </p>
 
+---
+
 <!-- 2. TEXTO QUE SE ESCRIBE SOLO -->
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=800&color=F75C7E&center=true&vCenter=true&width=500&lines=Estoy+aprendiendo+a+programar+💻;Me+encanta+crear+cosas+nuevas+✨;¡Welcome+to+my+temple!+🚀" />
