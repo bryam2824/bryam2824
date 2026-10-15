@@ -16,13 +16,13 @@
 
 ##  Sobre mí
 
-- 🌱 Estoy aprendiendo **HTML, CSS y JavaScript**
+- 🌱 Estoy aprendiendo ** **
 - 🎯 Mi meta: convertirme en desarrollador web
 - 📫 Contáctame en: **tu-correo@ejemplo.com**
 - ⚡ Dato curioso: *Me gusta buscarle sentido a lo que realizo*
 
 <!-- 3. TEXTO DE COLORES (con fórmulas LaTeX) -->
-$\color{#F75C7E}{\textsf{Todos los diás tengo mi dosis de programación }}$
+$\color{#F75C7E}{\textsf{!Todos los diás tengo mi dosis de programación¡ }}$
 
 $\color{#00BFFF}{\textsf{Dios}}$ $\color{#32CD32}{\textsf{Conocimiento}}$ $\color{orange}{\textsf{Programación}}$
 
