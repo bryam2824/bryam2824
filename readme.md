@@ -42,7 +42,9 @@ $\color{#00BFFF}{\textsf{Azul}}$ $\color{#32CD32}{\textsf{Verde}}$ $\color{orang
 📊 Mis estadísticas
 <!-- 6. ESTADÍSTICAS AUTOMÁTICAS -->
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=bryam2824&show_icons=true&theme=radical" height="150" />
+  <img src="https://github-readme-stats.vercel.app/api?username=bryam2824&show_icons=true&title_color=FFD700&text_color=C0C0C0&icon_color=FFD700&bg_color=0D1117&border_color=C0C0C0&border_radius=10&theme=transparent" height="160" />
+</p>
+
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=bryam2824&layout=compact&theme=radical" height="150" />
 </p>
 <!-- GIF realista de programador -->
