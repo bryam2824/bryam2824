@@ -8,6 +8,7 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=800&color=F75C7E&center=true&vCenter=true&width=500&lines=Estoy+aprendiendo+a+programar+💻;Me+encanta+crear+cosas+nuevas+✨;¡Welcome+to+my+temple!+🚀" />
 </p>
 
+
 ---
 
 ## 🙋‍♀️ Sobre mí
