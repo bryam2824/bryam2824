@@ -35,9 +35,9 @@ $\color{#00BFFF}{\textsf{Dios}}$ $\color{#32CD32}{\textsf{Conocimiento}}$ $\colo
 
 <!-- 5. INSIGNIAS DE COLORES (badges) -->
 <p align="left">
-<img src="https://img.shields.io/badge/python-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
-<img src="https://img.shields.io/badge/visualstudiocode-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
-<img src="https://img.shields.io/badge/PowerBI-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+<img src="https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" />
+<img src="https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" />
 <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
 </p>
 📊 Mis estadísticas
