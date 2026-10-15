@@ -1,3 +1,4 @@
+
 <!-- 1. BANNER ANIMADO -->
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=180&section=header&text=¡Hola,%20soy%20Bryam%20M!&fontSize=40&fontColor=ffffff&animation=fadeIn" />
@@ -48,10 +49,10 @@ $\color{#00BFFF}{\textsf{Azul}}$ $\color{#32CD32}{\textsf{Verde}}$ $\color{orang
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=bryam2824&layout=compact&theme=radical" height="150" />
 </p>
 <!-- GIF realista de programador -->
+<img width="700" height="467" alt="perfil" src="https://github.com/user-attachments/assets/aea7fb16-1e91-4211-96e8-dadcba427e37" />
 <p align="center">
-  <img src="https://copilot.microsoft.com/th/id/BCO.afca48cc-fbe2-471f-956d-07d26696c06c.png" width="400" />
+  <img src="perfil.gif" width="700" />
 </p>
-
 <!-- PIE DE PÁGINA -->
 <p align="center">
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=100&section=footer" />
