@@ -46,7 +46,7 @@ $\color{#00BFFF}{\textsf{Azul}}$ $\color{#32CD32}{\textsf{Verde}}$ $\color{orang
   <img src="https://github-readme-stats.vercel.app/api?username=bryam2824&show_icons=true&title_color=FFD700&text_color=C0C0C0&icon_color=FFD700&bg_color=0D1117&border_color=C0C0C0&border_radius=10&theme=transparent" height="160" />
 </p>
 
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=bryam2824&layout=compact&theme=radical" height="150" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=bryam2824&layout=compact&title_color=FFD700&text_color=C0C0C0&icon_color=FFD700&bg_color=0D1117&border_color=C0C0C0&border_radius=10&theme=transparent" height="150" />
 </p>
 <!-- GIF realista de programador -->
 <img width="700" height="467" alt="perfil" src="https://github.com/user-attachments/assets/aea7fb16-1e91-4211-96e8-dadcba427e37" />
