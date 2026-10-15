@@ -24,8 +24,8 @@ $\color{#00BFFF}{\textsf{Azul}}$ $\color{#32CD32}{\textsf{Verde}}$ $\color{orang
 
 <!-- 4. TEXTO VERDE Y ROJO CON BLOQUE "diff" -->
 ```diff
-+ Esto se ve en verde: ¡logros!
-- Esto se ve en rojo: cosas por mejorar
++ termine un curso de inteligencia artificial nivel campista basico
+- Aun debo aprender mucho
 🛠️ Tecnologías que uso
 <!-- 5. INSIGNIAS DE COLORES (badges) -->
 <p align="left">
