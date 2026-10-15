@@ -26,7 +26,8 @@ $\color{#00BFFF}{\textsf{Azul}}$ $\color{#32CD32}{\textsf{Verde}}$ $\color{orang
 ```diff
 + En proceso con toda la energia
 - Aun debo aprender mucho 
-🛠️ Tecnologías que uso```
+🛠️ Tecnologías que uso
+```
 <!-- 5. INSIGNIAS DE COLORES (badges) -->
 <p align="left">
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
