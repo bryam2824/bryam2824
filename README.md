@@ -18,14 +18,15 @@
 - ⚡ Dato curioso: *Me gusta buscarle sentido a lo que realizo*
 
 <!-- 3. TEXTO DE COLORES (con fórmulas LaTeX) -->
-$\color{#F75C7E}{\textsf{Programar es aprender todos los días}}$
+$\color{#F75C7E}{\textsf{Todos los diás tengo mi dosis de programación }}$
 
 $\color{#00BFFF}{\textsf{Azul}}$ $\color{#32CD32}{\textsf{Verde}}$ $\color{orange}{\textsf{Naranja}}$
 
 <!-- 4. TEXTO VERDE Y ROJO CON BLOQUE "diff" -->
 ```diff
-+ termine un curso de inteligencia artificial nivel campista basico
++ En proceso con toda la energia
 - Aun debo aprender mucho
+
 🛠️ Tecnologías que uso
 <!-- 5. INSIGNIAS DE COLORES (badges) -->
 <p align="left">
