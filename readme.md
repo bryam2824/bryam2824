@@ -45,10 +45,11 @@ $\color{#00BFFF}{\textsf{Azul}}$ $\color{#32CD32}{\textsf{Verde}}$ $\color{orang
   <img src="https://github-readme-stats.vercel.app/api?username=bryam2824&show_icons=true&theme=radical" height="150" />
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=bryam2824&layout=compact&theme=radical" height="150" />
 </p>
-<!-- 7. UNA IMAGEN O GIF NORMAL -->
+<!-- GIF realista de programador -->
 <p align="center">
-<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="300" />
+  <img src="https://copilot.microsoft.com/th/id/BCO.afca48cc-fbe2-471f-956d-07d26696c06c.png" width="400" />
 </p>
+
 <!-- PIE DE PÁGINA -->
 <p align="center">
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=100&section=footer" />
