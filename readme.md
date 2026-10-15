@@ -16,10 +16,10 @@
 
 ##  Sobre mí
 
-- 🌱 Estoy aprendiendo ** **
-- 🎯 Mi meta: convertirme en desarrollador web
+- 🌱 Estoy aprendiendo **SQL, python, Power BI, Pandas, NumPy, modelado de datos,  storytelling con datos, liderazgo de proyectos,dashboards interactivos  **
+- 🎯 Mi meta: convertirme en programador nivel junior inicialmente. 
 - 📫 Contáctame en: **tu-correo@ejemplo.com**
-- ⚡ Dato curioso: *Me gusta buscarle sentido a lo que realizo*
+- ⚡ Dato curioso: *Me gusta buscarle sentido a lo que realizo y aprender de ello*
 
 <!-- 3. TEXTO DE COLORES (con fórmulas LaTeX) -->
 $\color{#F75C7E}{\textsf{¡Todos los diás tengo mi dosis de programación! }}$
