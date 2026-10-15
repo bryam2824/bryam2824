@@ -16,7 +16,7 @@
 
 ##  Sobre mí
 
-- 🌱 Estoy aprendiendo **SQL, python, Power BI, Pandas, NumPy, modelado de datos,  storytelling con datos, liderazgo de proyectos,dashboards interactivos  **
+- 🌱 Estoy aprendiendo ** SQL, python, Power BI, Pandas, NumPy, modelado de datos,  storytelling con datos, liderazgo de proyectos, dashboards interactivos  **
 - 🎯 Mi meta: convertirme en programador nivel junior inicialmente. 
 - 📫 Contáctame en: **tu-correo@ejemplo.com**
 - ⚡ Dato curioso: *Me gusta buscarle sentido a lo que realizo y aprender de ello*
