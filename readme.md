@@ -14,7 +14,7 @@
 
 ---
 
-## 🙋‍♀️ Sobre mí
+##  Sobre mí
 
 - 🌱 Estoy aprendiendo **HTML, CSS y JavaScript**
 - 🎯 Mi meta: convertirme en desarrollador web
