@@ -24,7 +24,7 @@
 <!-- 3. TEXTO DE COLORES (con fórmulas LaTeX) -->
 $\color{#F75C7E}{\textsf{Todos los diás tengo mi dosis de programación }}$
 
-$\color{#00BFFF}{\textsf{Azul}}$ $\color{#32CD32}{\textsf{Verde}}$ $\color{orange}{\textsf{Naranja}}$
+$\color{#00BFFF}{\textsf{Dios}}$ $\color{#32CD32}{\textsf{Conocimiento}}$ $\color{orange}{\textsf{Programación}}$
 
 <!-- 4. TEXTO VERDE Y ROJO CON BLOQUE "diff" -->
 ```diff
