@@ -1,0 +1,328 @@
+# =============================================================================
+#  🐛 Bug Report — GitHub Issue Form
+#  Ubicación: .github/ISSUE_TEMPLATE/bug_report.yml
+#
+#  Convención de datos:
+#   - Cada campo tiene un `id` estable en snake_case. NO lo renombres: el
+#     workflow `.github/workflows/bug-triage.yml` (y cualquier métrica futura)
+#     lo usa como clave.
+#   - Las opciones de los dropdowns empiezan por un CÓDIGO (S1, P-ALTA, AREA-API…)
+#     para que se puedan mapear a etiquetas sin depender del texto visible.
+#     Puedes cambiar la descripción después del código, pero no el código.
+# =============================================================================
+
+name: "🐛 Bug Report"
+description: "Reporta un error para ayudarnos a mejorar el proyecto."
+title: "[BUG] "
+labels: ["bug", "status: triage"]
+# type: Bug            # ← Descomenta si tu organización usa "Issue Types"
+# projects: ["mi-org/1"] # ← Descomenta para añadir el issue a un Project automáticamente
+
+body:
+  # ---------------------------------------------------------------------------
+  # 0. Introducción
+  # ---------------------------------------------------------------------------
+  - type: markdown
+    attributes:
+      value: |
+        ¡Gracias por tomarte el tiempo de reportar un error! 🙌
+        Cuanto más completo sea el reporte, más rápido podremos resolverlo.
+        Los campos marcados con **\*** son obligatorios.
+
+  # ---------------------------------------------------------------------------
+  # 1. Verificaciones previas (calidad del dato de entrada)
+  # ---------------------------------------------------------------------------
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: "✅ Verificaciones previas"
+      description: "Confirma lo siguiente antes de continuar."
+      options:
+        - label: "Busqué en los [issues existentes](../issues?q=is%3Aissue) y este error no ha sido reportado."
+          required: true
+        - label: "Estoy usando la última versión disponible (o indico abajo por qué no)."
+          required: false
+        - label: "Eliminé contraseñas, tokens, datos personales y cualquier información sensible del reporte."
+          required: true
+
+  # ---------------------------------------------------------------------------
+  # 2. Clasificación (dimensiones para triage y métricas)
+  # ---------------------------------------------------------------------------
+  - type: markdown
+    attributes:
+      value: "## 🏷️ Clasificación"
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: "Área / componente afectado"
+      description: "¿En qué parte del sistema ocurre el error?"
+      options:
+        - "AREA-UI — Interfaz de usuario / Frontend"
+        - "AREA-API — Backend / API"
+        - "AREA-DB — Base de datos / Modelo de datos"
+        - "AREA-ETL — Pipelines / Ingesta / Transformación de datos"
+        - "AREA-AUTH — Autenticación / Permisos"
+        - "AREA-INT — Integraciones con terceros"
+        - "AREA-INFRA — Infraestructura / Despliegue / CI"
+        - "AREA-DOCS — Documentación"
+        - "AREA-OTRO — Otro / No lo sé"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: "Severidad"
+      description: "¿Qué tan grave es el impacto? (El equipo puede reajustarla durante el triage)."
+      options:
+        - "S1 — Crítica: sistema caído, pérdida/corrupción de datos o brecha de seguridad"
+        - "S2 — Alta: funcionalidad principal rota, sin alternativa"
+        - "S3 — Media: funcionalidad afectada, existe alternativa"
+        - "S4 — Baja: detalle visual, texto o molestia menor"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: "Frecuencia"
+      description: "¿Con qué frecuencia puedes reproducir el error?"
+      options:
+        - "F1 — Siempre (100%)"
+        - "F2 — Frecuentemente (> 50%)"
+        - "F3 — A veces / intermitente"
+        - "F4 — Solo ocurrió una vez"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: regression
+    attributes:
+      label: "¿Es una regresión?"
+      description: "¿Esto funcionaba correctamente en una versión anterior?"
+      options:
+        - "REG-SI — Sí, antes funcionaba"
+        - "REG-NO — No, nunca funcionó"
+        - "REG-NS — No lo sé"
+      default: 2
+    validations:
+      required: false
+
+  - type: input
+    id: last_working_version
+    attributes:
+      label: "Última versión en la que funcionaba"
+      description: "Solo si es una regresión."
+      placeholder: "p. ej., 1.4.2 o commit a1b2c3d"
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # 3. Descripción del problema
+  # ---------------------------------------------------------------------------
+  - type: markdown
+    attributes:
+      value: "## 📝 Detalle del error"
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Descripción"
+      description: "Describe claramente el error y cómo se presenta."
+      placeholder: "Al exportar el reporte mensual a CSV, la columna `fecha` aparece vacía para registros creados después del…"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: "Pasos para reproducir"
+      description: "Lista mínima de pasos para que podamos ver el error nosotros mismos."
+      value: |
+        1. Ir a '...'
+        2. Hacer clic en '...'
+        3. Ingresar '...'
+        4. Ver el error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: "Comportamiento esperado"
+      description: "¿Qué esperabas que ocurriera?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual_behavior
+    attributes:
+      label: "Comportamiento actual"
+      description: "¿Qué ocurrió en realidad? Incluye el mensaje de error exacto si lo hay."
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: "Registros (logs) / stack trace"
+      description: "Pega aquí los logs relevantes. Se formatearán automáticamente como código, no uses ```."
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "Capturas de pantalla / videos"
+      description: "Arrastra imágenes o videos a este campo."
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # 4. Impacto en datos (perspectiva de arquitectura de datos)
+  # ---------------------------------------------------------------------------
+  - type: markdown
+    attributes:
+      value: "## 📊 Impacto"
+
+  - type: dropdown
+    id: data_impact
+    attributes:
+      label: "Impacto en los datos"
+      description: "¿El error afecta la integridad de los datos? Puedes elegir varias opciones."
+      multiple: true
+      options:
+        - "DATA-NINGUNO — No afecta datos"
+        - "DATA-INCORRECTO — Datos mostrados o calculados incorrectamente"
+        - "DATA-DUPLICADO — Registros duplicados"
+        - "DATA-PERDIDA — Pérdida de datos"
+        - "DATA-CORRUPCION — Datos corruptos o inconsistentes"
+        - "DATA-SENSIBLE — Posible exposición de datos sensibles"
+        - "DATA-NS — No lo sé"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: users_affected
+    attributes:
+      label: "Alcance (usuarios afectados)"
+      options:
+        - "ALC-1 — Solo yo / un usuario"
+        - "ALC-2 — Un grupo de usuarios o un cliente"
+        - "ALC-3 — Muchos usuarios / varios clientes"
+        - "ALC-4 — Todos los usuarios"
+        - "ALC-NS — No lo sé"
+    validations:
+      required: false
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: "Solución temporal (workaround)"
+      description: "¿Encontraste alguna forma de evitar el problema mientras tanto?"
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # 5. Entorno
+  # ---------------------------------------------------------------------------
+  - type: markdown
+    attributes:
+      value: "## 💻 Entorno"
+
+  - type: input
+    id: project_version
+    attributes:
+      label: "Versión del proyecto"
+      description: "Número de versión, tag o hash del commit."
+      placeholder: "p. ej., 1.0.0 o a1b2c3d"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: deployment_env
+    attributes:
+      label: "Entorno de ejecución"
+      options:
+        - "ENV-PROD — Producción"
+        - "ENV-STG — Staging / QA"
+        - "ENV-DEV — Desarrollo (servidor compartido)"
+        - "ENV-LOCAL — Local"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: operating_system
+    attributes:
+      label: "Sistema operativo"
+      multiple: true
+      options:
+        - "Windows"
+        - "macOS"
+        - "Linux"
+        - "Android"
+        - "iOS"
+        - "Otro / No aplica"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: "Navegador(es)"
+      description: "Solo si el error ocurre en la web."
+      multiple: true
+      options:
+        - "Chrome"
+        - "Firefox"
+        - "Safari"
+        - "Edge"
+        - "Opera / Brave / otro Chromium"
+        - "No aplica"
+    validations:
+      required: false
+
+  - type: textarea
+    id: environment_details
+    attributes:
+      label: "Detalles adicionales del entorno"
+      description: "Versiones exactas, runtime, base de datos, dispositivo, etc."
+      render: yaml
+      placeholder: |
+        os: Windows 11 23H2
+        browser: Chrome 131
+        runtime: Node 22.11 / Python 3.12
+        database: PostgreSQL 16
+        device: Escritorio
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # 6. Cierre
+  # ---------------------------------------------------------------------------
+  - type: input
+    id: requested_assignee
+    attributes:
+      label: "Usuario de GitHub al que asignar"
+      description: "Opcional. Escribe su nombre de usuario sin @. Si lo dejas vacío, el issue queda sin asignar."
+      placeholder: "octocat"
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_info
+    attributes:
+      label: "Información adicional"
+      description: "Cualquier otro contexto: issues relacionados, hipótesis sobre la causa, enlaces, etc."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: "🤝 Contribución"
+      options:
+        - label: "Me gustaría enviar un Pull Request para corregir este error."
+          required: false

@@ -1,0 +1,105 @@
+# =============================================================================
+#  Triage automático de bugs
+#  Lee las respuestas del formulario bug_report.yml y las convierte en etiquetas:
+#    severity  "S1 — ..."        -> "severity: S1"
+#    area      "AREA-API — ..."  -> "area: api"
+#    regression "REG-SI — ..."   -> "regression"
+#    data_impact contiene PERDIDA / CORRUPCION / SENSIBLE -> "data-integrity"
+#    deployment_env "ENV-PROD"   -> "env: prod"
+#    requested_assignee         -> asigna al usuario si se indicó
+#  Si es S1 o hay riesgo sobre datos, añade también "priority: urgent".
+# =============================================================================
+name: Bug triage
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  label:
+    if: contains(github.event.issue.labels.*.name, 'bug')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Parsear el formulario
+        id: parser
+        uses: stefanbuck/github-issue-parser@v3
+        with:
+          template-path: .github/ISSUE_TEMPLATE/bug_report.yml
+
+      - name: Aplicar etiquetas
+        uses: actions/github-script@v7
+        env:
+          FORM: ${{ steps.parser.outputs.jsonString }}
+        with:
+          script: |
+            const form = JSON.parse(process.env.FORM || '{}');
+            const asList = v => (Array.isArray(v) ? v : (v ? String(v).split(',') : []))
+              .map(s => s.trim()).filter(Boolean);
+            const code = v => (String(v || '').match(/^([A-Z0-9]+(?:-[A-Z0-9]+)?)/) || [])[1];
+
+            const labels = new Set();
+
+            const sev = code(form.severity);                     // S1..S4
+            if (sev) labels.add(`severity: ${sev}`);
+
+            const area = code(form.area);                        // AREA-API
+            if (area) labels.add(`area: ${area.replace('AREA-', '').toLowerCase()}`);
+
+            const env = code(form.deployment_env);               // ENV-PROD
+            if (env) labels.add(`env: ${env.replace('ENV-', '').toLowerCase()}`);
+
+            if (code(form.regression) === 'REG-SI') labels.add('regression');
+
+            const risky = ['DATA-PERDIDA', 'DATA-CORRUPCION', 'DATA-SENSIBLE'];
+            const dataCodes = asList(form.data_impact).map(code);
+            const dataRisk = dataCodes.some(c => risky.includes(c));
+            if (dataRisk) labels.add('data-integrity');
+            if (dataCodes.includes('DATA-SENSIBLE')) labels.add('security');
+
+            if (sev === 'S1' || dataRisk) labels.add('priority: urgent');
+
+            const contribution = asList(form.contribution);
+            if (contribution.length) labels.add('contributor-wants-to-fix');
+
+            if (labels.size === 0) return;
+            // Nota: GitHub crea automáticamente las etiquetas que aún no existen.
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              labels: [...labels],
+            });
+            core.info(`Etiquetas aplicadas: ${[...labels].join(', ')}`);
+
+      - name: Asignar responsable solicitado
+        uses: actions/github-script@v7
+        env:
+          FORM: ${{ steps.parser.outputs.jsonString }}
+        with:
+          script: |
+            const form = JSON.parse(process.env.FORM || '{}');
+            const assignee = String(form.requested_assignee || '').trim();
+
+            if (!assignee) {
+              core.info('No se indicó un usuario; el issue queda sin asignar.');
+              return;
+            }
+
+            if (!/^[A-Za-z0-9](?:[A-Za-z0-9-]{0,37}[A-Za-z0-9])?$/.test(assignee)) {
+              core.setFailed('El nombre de usuario de GitHub no tiene un formato válido.');
+              return;
+            }
+
+            await github.rest.issues.addAssignees({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              assignees: [assignee],
+            });
+            core.info(`Issue asignado a @${assignee}.`);

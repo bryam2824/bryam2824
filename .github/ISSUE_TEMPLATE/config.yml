@@ -1,0 +1,16 @@
+# Configura el selector de plantillas que aparece al pulsar "New issue".
+# Ubicación: .github/ISSUE_TEMPLATE/config.yml
+
+# false = obliga a usar una plantilla (evita issues vacíos y sin estructura).
+blank_issues_enabled: false
+
+contact_links:
+  - name: "💬 Preguntas y soporte"
+    url: https://github.com/OWNER/REPO/discussions
+    about: "¿Dudas de uso? Pregunta en Discussions en lugar de abrir un bug."
+  - name: "🔒 Reportar una vulnerabilidad de seguridad"
+    url: https://github.com/OWNER/REPO/security/advisories/new
+    about: "No publiques vulnerabilidades en un issue público; repórtalas de forma privada."
+  - name: "📚 Documentación"
+    url: https://github.com/OWNER/REPO#readme
+    about: "Revisa la documentación antes de reportar."
